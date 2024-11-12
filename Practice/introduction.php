@@ -16,3 +16,27 @@
     <li>Phân trang</li>
     <li>Tìm kiếm, lọc dữ liệu</li>
 </ul>
+
+<h2>Thiết kế database:</h2>
+<ul>
+    <li style="font-weight: bold;">Bảng user</li>
+    <ul>
+        <li>id - primary key (int)</li>
+        <li>fullname (varchar (100))</li>
+        <li>email (varchar (100))</li>
+        <li>phone (varchar (20))</li>
+        <li>password (varchar (50))</li>
+        <li>forgotToken (varchar (100))</li>
+        <li>activeToken (varchar (100))</li>
+        <li>create_at (datetime)</li>
+        <li>update_at (datetime)</li>
+    </ul>
+    <br>
+    <li style="font-weight: bold;">Bảng loginToken</li>
+    <ul>
+        <li>id - primary key (int)</li>
+        <li>user_Id (int)</li>
+        <li>token varchar(100)</li>
+        <li>create_at (datetime)</li>
+    </ul>
+</ul>
