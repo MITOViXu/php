@@ -5,6 +5,8 @@ require_once("config.php");
 $module = _MODULE;
 $action = _ACTION;
 
+echo _CODE;
+
 if(!empty($_GET["module"])) {
     if(is_string($_GET["module"])) {
         $module = trim($_GET["module"]);
