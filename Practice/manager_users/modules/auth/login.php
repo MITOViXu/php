@@ -5,7 +5,12 @@
 if(!defined('_CODE')) {
     die('Access denied...');
 }
-layouts();
+
+$data = [
+    'pageTitle'=> 'Đăng nhập tài khoản',
+];
+
+layouts('header', $data);
 ?>
 
 <div class="row">
@@ -20,7 +25,7 @@ layouts();
                 <label for="">Password: </label>
                 <input type="password" class="form-control" placeholder="Mật khẩu">
             </div>
-            <button class="btn btn-primary btn-block mg-form" type="submit">
+            <button class="mg-btn btn btn-primary btn-block" type="submit">
                 Đăng nhập
             </button>
             <hr>
