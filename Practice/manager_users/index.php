@@ -1,8 +1,7 @@
-<i class="fa-solid fa-house"></i>
 <?php
 session_start();
 require_once("config.php");
-
+require_once("./includes/functions.php");
 $module = _MODULE;
 $action = _ACTION;
 
