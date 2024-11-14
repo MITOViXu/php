@@ -1,3 +1,4 @@
+<i class="fa-solid fa-house"></i>
 <?php
 session_start();
 require_once("config.php");
@@ -5,7 +6,11 @@ require_once("config.php");
 $module = _MODULE;
 $action = _ACTION;
 
-echo _CODE;
+// echo _WEB_HOST."<br>";
+// echo _WEB_HOST_TEMPLATES."<br>";
+// echo _WEB_PATH."<br>";
+// echo _WEB_PATH_TEMPLATES."<br>";
+// echo _CODE;
 
 if(!empty($_GET["module"])) {
     if(is_string($_GET["module"])) {

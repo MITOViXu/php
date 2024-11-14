@@ -4,5 +4,8 @@
 // Kiểm tra hằng số có tồn tại hay không 
 if(!defined('_CODE')) die('Access denied...');
 
+require_once(_WEB_PATH_TEMPLATES.'/layout/header.php');
+require_once(_WEB_PATH_TEMPLATES.'/layout/footer.php'); 
+
 ?>
-<h1>Trang functions</h1><h1>Dashboard</h1>
+<h1>Dashboard</h1>
