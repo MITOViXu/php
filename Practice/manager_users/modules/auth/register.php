@@ -17,9 +17,9 @@ $kq = update('users', $data, " id = 4");
 
 // var_dump($kq);
 
-echo "<pre>";
-print_r($kq);
-echo "</pre>";
+// echo "<pre>";
+// print_r($kq);
+// echo "</pre>";
 
 layouts('header');
 ?>

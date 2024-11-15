@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+// require mailer source code, thư viện php mailer
+require_once("./includes/phpmailer/Exception.php");
+require_once("./includes/phpmailer/PHPMailer.php");
+require_once("./includes/phpmailer/SMTP.php");
+
 require_once("config.php");
 require_once("./includes/functions.php");
 require_once("./includes/database.php");
@@ -16,7 +22,8 @@ require_once("./includes/session.php");
 
 // Hàm flash này cài đặt và set flash data xong thì sẽ tự động xóa nen tiết kiệm bộ nhớ
 // setFlashData("msg", "Cài đặt thành công");
-echo "<h1 style='color: green'>".getFlashData("msg")."</h1>";
+// echo "<h1 style='color: green'>".getFlashData("msg")."</h1>";
+// sendMail("your client email", "Hello from You", "Nội dung của email");
 
 $module = _MODULE;
 $action = _ACTION;

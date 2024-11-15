@@ -154,6 +154,24 @@
             <h4>Ở phần này chúng ta tập trung vào việc xây dựng Session cho trang web, xử dụng trong việc ghi nhớ người dùng đăng nhập, Shopping cart, form data, flash message</h4>
         </div>
     </div>
+    
+    <!-- CHAPTER 4 -->
+    <div>
+        <div class="responsive-div left-div" style=" text-align: center;">
+            <h4>Cách triển khai</h4>
+            <h4>Xây dựng hàm gửi mail trong PHP</h4>
+            <iframe width="100%" height="500px" src="https://www.youtube.com/embed/mf95wFS89tQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h4>Clone source <a href="https://github.com/PHPMailer/PHPMailer" target="_blank">code</a>.</h3>
+        </div>
+        <hr class="display-horizon">
+        <h3 class="display-title">
+            Instruction side
+        </h3>
+        <div class="responsive-div right-div" style=" padding:0; vertical-align: top;">
+            <h1>Mailer</h1>
+            <h4>Do các trinh duyệt web đã chặn gửi mail nên ta dùng source code như hướng dẫn.</h4>
+        </div>
+    </div>
 </body>
 </html>
 
