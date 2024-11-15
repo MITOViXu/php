@@ -12,8 +12,8 @@ $data = [
     'phone'=> '09876123451',
 ];
 
-// $kq = insert('users', $data);
-$kq = getRow('SELECT * FROM users');
+$kq = update('users', $data, " id = 4");
+// $kq = getRow('SELECT * FROM users');
 
 // var_dump($kq);
 

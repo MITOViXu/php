@@ -3,6 +3,20 @@ session_start();
 require_once("config.php");
 require_once("./includes/functions.php");
 require_once("./includes/database.php");
+require_once("./includes/session.php"); 
+
+// Gọi hàm set session
+// $test_session = $setSession('mtoan', 'Giá trị của session mtoan');
+// var_dump($test_session);
+
+// Gọi hàm getSession va removeSession
+// echo '<br>';
+// removeSession();
+// echo getSession('mtoan');
+
+// Hàm flash này cài đặt và set flash data xong thì sẽ tự động xóa nen tiết kiệm bộ nhớ
+// setFlashData("msg", "Cài đặt thành công");
+echo "<h1 style='color: green'>".getFlashData("msg")."</h1>";
 
 $module = _MODULE;
 $action = _ACTION;

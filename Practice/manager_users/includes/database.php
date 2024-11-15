@@ -1,8 +1,12 @@
 <!-- Các hàm xử lý liên quan đến CSDL -->
 <?php
 require_once "connect.php";
+
 // Kiểm tra hằng số có tồn tại hay không 
+// Nếu truy cập thẳng bằng http://localhost/php/Practice/manager_users/modules/auth/register.php sẽ bị access denied...
+// Nếu chèn vào từ  
 if(!defined('_CODE')) die('Access denied...');
+
 function querry($sql, $data=[], $check=false)
 {
     global $con;
