@@ -7,10 +7,14 @@ if(!defined('_CODE')) {
 }
 
 $data = [
-    'pageTitle'=> 'Đăng ký tài khoản',
+    'fullname'=> 'Hùng',
+    'email'=> 'hung@gmail.com',
+    'phone'=> '0987876543',
 ];
 
-layouts('header', $data);
+// insert('users', $data);
+
+// layouts('header', $data);
 ?>
 
 <div class="row">
