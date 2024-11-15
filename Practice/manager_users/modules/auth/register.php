@@ -7,14 +7,21 @@ if(!defined('_CODE')) {
 }
 
 $data = [
-    'fullname'=> 'Hùng',
-    'email'=> 'hung@gmail.com',
-    'phone'=> '0987876543',
+    'fullname'=> 'KTuong',
+    'email'=> 'tuong@gmail.com',
+    'phone'=> '09876123451',
 ];
 
-// insert('users', $data);
+// $kq = insert('users', $data);
+$kq = getRow('SELECT * FROM users');
 
-// layouts('header', $data);
+// var_dump($kq);
+
+echo "<pre>";
+print_r($kq);
+echo "</pre>";
+
+layouts('header');
 ?>
 
 <div class="row">
