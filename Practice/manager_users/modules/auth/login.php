@@ -12,12 +12,15 @@ $data = [
 
 // layouts('header', $data);
 
-var_dump(isPost());
+// var_dump(isPost());
 
-$kq = filter();
-echo "<pre>";
-print_r($kq);
-echo "</pre>";
+// $kq = filter();
+// echo "<pre>";
+// print_r($kq);
+// echo "</pre>";
+
+
+var_dump(isNumberFloat(1.1));
 
 ?>
 <!DOCTYPE html>

@@ -70,7 +70,7 @@ function filter(){
         // Sử dụng hàm có sẵn trong php
         // Mã hóa tránh người dùng tùy chỉnh can thiệp vào trang web
         // http://localhost/php/Practice/manager_users/?module=auth&action=login&id=1/n%3Cscript%3Ealert(1)%3C/script%3E
-
+        // Bước này đảm bảo rằng ngay cả khi ai đó cố gắng đưa mã độc vào tên khóa, nó sẽ bị vô hiệu hóa. 
         $key = strip_tags($key);
         // Xử lý khi dữ liệu đầu vào là một mảng
         if(is_array($value)) $filterArr[$key] = filter_input(INPUT_GET,$key, FILTER_SANITIZE_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY);
@@ -93,3 +93,21 @@ function filter(){
   return $filterArr;
 }
 
+// Kiểm tra email
+function isEmail($email){
+
+  // Hàm có sẵn của php
+  return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+// Kiểm tra số nguyên INT
+
+function isNumber($nnumber){
+  return filter_var($nnumber, FILTER_VALIDATE_INT); 
+}
+
+// Kiểm tra số thực FLOAT
+
+function isNumberFloat($nnumber){
+  return filter_var($nnumber, FILTER_VALIDATE_FLOAT); 
+}
