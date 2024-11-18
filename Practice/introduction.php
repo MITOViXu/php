@@ -183,14 +183,20 @@
             <iframe width="100%" height="500px" src="https://www.youtube.com/embed/SZ9mWi-sqI0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <h4>Validate dữ liệu</h4>
             <iframe width="100%" height="500px" src="https://www.youtube.com/embed/lZT8kQbwoLA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+            <h4> Password_hash và Password_verify</h4>
+            <iframe width="100%" height="500px" src="https://www.youtube.com/embed/oW9XxUImetA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        
+            </div>
+
         <hr class="display-horizon">
+
         <h3 class="display-title">
             Instruction side
         </h3>
         <div class="responsive-div right-div" style=" padding:0; vertical-align: top;">
             <h1>Xử lý dữ liệu</h1>
             <h4>Trước hết ta lọc dữ liệu tránh client thực hiện truy vấn ảnh hưởng đến trang web</h4>
+            <h4>Sau đó ta tạo các hàm kiểm tra input là string, int, float</h4>
         </div>
     </div>
 </body>

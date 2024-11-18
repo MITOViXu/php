@@ -128,5 +128,5 @@ function getRow($sql){
     // Nếu là true thì sẽ trả về data dữ liệu query được
     $kq = querry($sql, '', true);
 
-    if(!empty($kq)) return "<h1>".$kq -> rowCount()."</h1>";
+    if(!empty($kq)) return $kq -> rowCount();
 }

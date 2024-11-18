@@ -111,3 +111,31 @@ function isNumber($nnumber){
 function isNumberFloat($nnumber){
   return filter_var($nnumber, FILTER_VALIDATE_FLOAT); 
 }
+
+function isPhone($phone) {
+  // echo $phone;
+  if ($phone[0] != '0') 
+      return false;
+  $phone = substr($phone, 1);
+  if (isNumber($phone) && strlen($phone) == 9) 
+      return true;
+  return false;
+}
+
+function getSmg($smg, $type='success'){
+  echo '<div class="alert alert-'.$type.'">';
+  echo ''.$smg.'';
+  echo '</div>';
+}
+
+// Hàm chuyển hướng
+function redirect($path='index.php'){
+  header("Location: $path");
+  exit;
+}
+
+
+// Hàm thông bảo lỗi
+function form_error($filename, $type, $errors){
+  echo (!empty($errors[$filename][$type])) ? '<span class="error"> '.$errors[$filename][$type].'</span>' : null ;
+}
