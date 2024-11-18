@@ -199,6 +199,14 @@
             <h4>Sau đó ta tạo các hàm kiểm tra input là string, int, float</h4>
         </div>
     </div>
+     <!-- CHAPTER 5 -->
+
+    <div class="" style=" text-align: center;">
+        <h2>Còn lại nhiều quá vô <a href="https://www.youtube.com/playlist?list=PL88QwC-jiH9ByYqO0mVStNEHB6QT24yx1">link</a> này coi đi, mình lười soạn quá man :)))))</h2>
+        <h4>Code thì mình xử lí hết rồi, các bạn cứ vào <a href="https://github.com/MITOViXu/php" target="_blank" >link</a> clone về thực hành theo nha. </h4>
+    </div>
+
+
 </body>
 </html>
 
