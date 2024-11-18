@@ -94,9 +94,9 @@ $smg =getFlashData('smg');
 $errors =getFlashData('errors');
 $smg_type =getFlashData('smg_type');
 $old =getFlashData('old');
-echo '<pre>';
-print_r($errors);
-echo '</pre>';
+// echo '<pre>';
+// print_r($errors);
+// echo '</pre>';
 layouts('header');
 
 

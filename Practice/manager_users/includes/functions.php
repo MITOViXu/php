@@ -122,9 +122,9 @@ function isPhone($phone) {
   return false;
 }
 
-function getSmg($smg, $type='success'){
+function getSmg($msg, $type='success'){
   echo '<div class="alert alert-'.$type.'">';
-  echo ''.$smg.'';
+  echo ''.$msg.'';
   echo '</div>';
 }
 
@@ -138,4 +138,26 @@ function redirect($path='index.php'){
 // Hàm thông bảo lỗi
 function form_error($filename, $type, $errors){
   echo (!empty($errors[$filename][$type])) ? '<span class="error"> '.$errors[$filename][$type].'</span>' : null ;
+}
+
+// Hàm in ra cấu trúc data
+function printRaw($data){
+  echo '<pre>';
+  print_r($data);
+  echo '</pre>';
+}
+// Kiểm tra trạng thái đăng nhập
+function isLogin(){
+  $checklogin = false;
+  // setSession('loginToken', $tokenlogin); 
+  if(getSession("loginToken")){
+      $tokenlogin=getSession("loginToken");
+      echo"".$tokenlogin."";
+      $querryToken = oneRaw("SELECT user_id From tokenlogin where token = '$tokenlogin'");
+      if(!empty($querryToken))
+          $checklogin = true;
+      else 
+          removeSession("loginToken");
+  }
+  return $checklogin;
 }

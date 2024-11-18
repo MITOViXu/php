@@ -10,7 +10,70 @@ $data = [
     'pageTitle'=> 'Đăng nhập tài khoản',
 ];
 
-// layouts('header', $data);
+layouts('header', $data);
+
+if(isPost()){
+    $filterAll = filter();
+    // Hàm trim là loại bỏ khoảng cách
+    if(!empty(trim($filterAll['email'])) && !empty(trim($filterAll['password']))){
+        $email = $filterAll['email'];
+        $password = $filterAll['password'];
+        $useQuerry = oneRaw("SELECT * FROM users where email = '$email'");
+        // printRaw($useQuerry);
+        if(!empty($useQuerry)){
+            $hash = $useQuerry['password'];
+            setFlashData('old',$filterAll);
+            if(password_verify($password, $hash)){
+                
+                // Tạo token login kiểm tra xem người dùng có đang đăng nhập hay không
+                $tokenlogin = sha1(uniqid().time());
+                $userId = $useQuerry['id'];
+                $dataInsert = [
+                    'user_id'=> $userId,
+                    'token' =>  $tokenlogin,
+                    'create_at'=> date('Y-m-d H:i:s')
+                ];
+
+                $insertStatus = insert('tokenlogin',$dataInsert);
+
+                if($insertStatus){
+
+                    // Insert thành công
+                    // lưu vào session
+                    setSession('loginToken', $tokenlogin); 
+
+                    redirect('?module=home&action=dashboard');
+                }else{
+                    setFlashData('msg','Không thể đăng nhập, vui lòng thử lại sau');
+                    setFlashData('msg_type','danger');
+                }
+            }
+            else{
+                setFlashData('msg','Mật khẩu không chính xác.');
+                setFlashData('msg_type','danger');
+            }
+            
+        }
+        else{
+            setFlashData('msg','Email không tồn tại.');
+            setFlashData('msg_type','danger');
+        }
+    }
+    else{
+        setFlashData('msg','Vui lòng nhập email và mật khẩu.');
+        setFlashData('msg_type','danger');
+    }
+    redirect('?module=auth&action=login');
+
+}
+
+if(isLogin()){
+    redirect("?module=home&action=dashboard");
+}
+
+$msg = getFlashData('msg');
+$msg_type = getFlashData('msg_type');
+$old = getFlashData('old');
 
 // var_dump(isPost());
 
@@ -20,7 +83,7 @@ $data = [
 // echo "</pre>";
 
 
-var_dump(isNumberFloat(1.1));
+// var_dump(isNumberFloat(1.1));
 
 ?>
 <!DOCTYPE html>
@@ -38,10 +101,13 @@ var_dump(isNumberFloat(1.1));
     <div class="row">
         <div class="col-4" style="margin: 50px auto;">
             <h2 class="text-center text-uppercase">Đăng nhập quản lí user</h2>
+            <?php 
+                getSmg($msg, $msg_type);
+            ?>
             <form action="" method="post">
                 <div class="form-group mg-form">
                     <label for="">Email: </label>
-                    <input name="email" type="email" class="form-control" placeholder="Địa chỉ email">
+                    <input name="email" type="email" class="form-control" placeholder="Địa chỉ email" value = "<?php echo !empty($old['email']) ? $old['email'] : null ?>">
                 </div>
                 <div class="form-group mg-form">
                     <label for="">Password: </label>
