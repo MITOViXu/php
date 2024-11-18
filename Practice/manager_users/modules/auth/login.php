@@ -10,7 +10,7 @@ $data = [
     'pageTitle'=> 'Đăng nhập tài khoản',
 ];
 
-layouts('header', $data);
+layouts('header-login');
 
 if(isPost()){
     $filterAll = filter();
@@ -126,5 +126,5 @@ $old = getFlashData('old');
 </html>
 
 <?php
-// layouts('footer');
+layouts('footer-login');
 ?>

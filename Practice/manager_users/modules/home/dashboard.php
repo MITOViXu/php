@@ -18,10 +18,11 @@ if(!isLogin()){
 }
 
 ?>
-    
-    <h1>Dashboard</h1>
-    
+<div style="height: 100vh;">
+
+</div>
 <?php
 // require_once(_WEB_PATH_TEMPLATES.'/layout/footer.php'); 
 layouts('footer');
 ?>
+

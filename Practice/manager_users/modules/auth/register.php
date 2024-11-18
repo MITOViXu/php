@@ -97,7 +97,7 @@ $old =getFlashData('old');
 // echo '<pre>';
 // print_r($errors);
 // echo '</pre>';
-layouts('header');
+layouts('header-login');
 
 
 ?>
@@ -197,5 +197,5 @@ layouts('header');
 </div>
 
 <?php
-layouts('footer');
+layouts('footer-login');
 ?>

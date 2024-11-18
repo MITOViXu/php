@@ -152,7 +152,7 @@ function isLogin(){
   // setSession('loginToken', $tokenlogin); 
   if(getSession("loginToken")){
       $tokenlogin=getSession("loginToken");
-      echo"".$tokenlogin."";
+      // echo"".$tokenlogin."";
       $querryToken = oneRaw("SELECT user_id From tokenlogin where token = '$tokenlogin'");
       if(!empty($querryToken))
           $checklogin = true;
