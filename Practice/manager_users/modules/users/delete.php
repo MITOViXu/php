@@ -2,7 +2,10 @@
 <?php
 
 // Kiểm tra hằng số có tồn tại hay không 
-if(!defined('_CODE')) die('Access denied...');
+if(!defined('_CODE')){
+    require_once "../error/access_denied.php";
+    die();
+}
 
 // Kiểm tra id trong database -> tồn tại -> tiến hành xóa
 // Xóa dữ liệu bằng logintoken -> Xóa dữ liệu người dùng

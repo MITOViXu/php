@@ -2,7 +2,10 @@
 <?php
 
 // Kiểm tra hằng số có tồn tại hay không 
-if(!defined('_CODE')) die('Access denied...');
+if(!defined('_CODE')){
+    require_once "../error/access_denied.php";
+    die();
+}
 
 $data =[
     'pageTitle' => 'Danh sách người dùng'

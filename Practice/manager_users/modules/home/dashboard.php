@@ -2,7 +2,10 @@
 <?php
 
 // Kiểm tra hằng số có tồn tại hay không 
-if(!defined('_CODE')) die('Access denied...');
+if(!defined('_CODE')){
+    require_once "../error/access_denied.php";
+    die();
+}
 
 // require_once(_WEB_PATH_TEMPLATES.'/layout/header.php');
 $data = [
