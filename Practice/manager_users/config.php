@@ -17,3 +17,4 @@ define('_WEB_HOST_TEMPLATES', _WEB_HOST."/templates");
 // Thiết lập path sử dụng cho .php
 define('_WEB_PATH', __DIR__);
 define('_WEB_PATH_TEMPLATES', _WEB_PATH.'\templates');
+define('_WEB_PATH_VIEW', _WEB_PATH.'\modules');

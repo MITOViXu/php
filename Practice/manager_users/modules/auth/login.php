@@ -19,15 +19,24 @@ if(isPost()){
         $email = $filterAll['email'];
         $password = $filterAll['password'];
         $useQuerry = oneRaw("SELECT * FROM users where email = '$email'");
+        $userId = $useQuerry['id'];
         // printRaw($useQuerry);
         if(!empty($useQuerry)){
             $hash = $useQuerry['password'];
             setFlashData('old',$filterAll);
             if(password_verify($password, $hash)){
                 
+                $userLoginMulti = getRow("SELECT * from tokenlogin where user_Id = $userId");
+
+                if($userLoginMulti > 0){
+                    setFlashData('msg','Bạn đang đăng nhập ở một nơi khác.');
+                    setFlashData('msg_type','danger');
+                    redirect('?module=auth&action=login');
+                }
+
                 // Tạo token login kiểm tra xem người dùng có đang đăng nhập hay không
                 $tokenlogin = sha1(uniqid().time());
-                $userId = $useQuerry['id'];
+                // $userId = $useQuerry['id'];
                 $dataInsert = [
                     'user_id'=> $userId,
                     'token' =>  $tokenlogin,

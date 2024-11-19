@@ -27,7 +27,7 @@ if(!defined('_CODE')) die('Access denied...');
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
           <li><a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Customers</a></li>
+          <li><a href="?module=users&action=list" class="nav-link px-2 link-body-emphasis">Customers</a></li>
           <li><a href="#" class="nav-link px-2 link-body-emphasis">Products</a></li>
         </ul>
 
@@ -40,7 +40,7 @@ if(!defined('_CODE')) die('Access denied...');
             <img src="https://cdnphoto.dantri.com.vn/G-9igV7rMPWnBFX7pEN4XkJReT0=/thumb_w/960/2021/05/11/chau-11-1620746384114.jpeg" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
           <ul class="dropdown-menu text-small" style="">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="?module=users&action=list">Mangage</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider"></li>

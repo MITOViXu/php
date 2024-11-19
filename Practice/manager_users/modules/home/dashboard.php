@@ -16,11 +16,8 @@ layouts('header', $data);
 if(!isLogin()){
     redirect("?module=auth&action=login");
 }
-
+// require_once _WEB_PATH_VIEW.'/users/list.php';
 ?>
-<div style="height: 100vh;">
-
-</div>
 <?php
 // require_once(_WEB_PATH_TEMPLATES.'/layout/footer.php'); 
 layouts('footer');
