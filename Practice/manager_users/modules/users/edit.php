@@ -238,7 +238,6 @@ layouts('header-login');
             </button>
             <a href="?module=users&action=list" class="mg-btn-add btn btn-success btn-block">Quay lại</a>
             <hr>
-            <hr>
         </form>
     </div>
 </div>

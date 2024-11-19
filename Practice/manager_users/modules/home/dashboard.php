@@ -19,7 +19,7 @@ layouts('header', $data);
 if(!isLogin()){
     redirect("?module=auth&action=login");
 }
-// require_once _WEB_PATH_VIEW.'/users/list.php';
+require_once _WEB_PATH_VIEW.'/home/Hometown-Homepage/Home.php';
 ?>
 <?php
 // require_once(_WEB_PATH_TEMPLATES.'/layout/footer.php'); 

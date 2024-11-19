@@ -7,13 +7,6 @@ if(!defined('_CODE')){
     die();
 }
 
-$data = [
-    'fullname'=> 'KTuong',
-    'email'=> 'tuong@gmail.com',
-    'phone'=> '09876123451',
-];
-
-$kq = update('users', $data, " id = 4");
 // $kq = getRow('SELECT * FROM users');
 
 // var_dump($kq);
@@ -204,7 +197,6 @@ layouts('header-login');
                 Thêm người dùng
             </button>
             <a href="?module=users&action=list" class="mg-btn-add btn btn-success btn-block">Quay lại</a>
-            <hr>
             <hr>
         </form>
     </div>

@@ -13,6 +13,7 @@ const _PASS = '';
 // Thiết lập host sử dụng cho css js
 define('_WEB_HOST', 'http://'.$_SERVER["HTTP_HOST"].'/php/Practice/manager_users');
 define('_WEB_HOST_TEMPLATES', _WEB_HOST."/templates");
+define('_WEB_HOST_VIEW', _WEB_HOST."/modules/home");
 
 // Thiết lập path sử dụng cho .php
 define('_WEB_PATH', __DIR__);
