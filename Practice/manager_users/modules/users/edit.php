@@ -6,11 +6,11 @@ if(!defined('_CODE')) {
     die('Access denied...');
 }
 
-$data = [
-    'fullname'=> 'KTuong',
-    'email'=> 'tuong@gmail.com',
-    'phone'=> '09876123451',
-];
+// $data = [
+//     'fullname'=> 'KTuong',
+//     'email'=> 'tuong@gmail.com',
+//     'phone'=> '09876123451',
+// ];
 
 $filterAll = filter();
 $userId = null;
@@ -24,7 +24,7 @@ if(!empty($filterAll['id'])) {
     }
 }
 
-$kq = update('users', $data, " id = 4");
+// $kq = update('users', $data, " id = 4");
 // $kq = getRow('SELECT * FROM users');
 
 // var_dump($kq);
@@ -35,7 +35,7 @@ $kq = update('users', $data, " id = 4");
 $old = null;
 $userDetail = getFlashData("user-detail");
 if(!empty($userDetail)){    
-    printRaw($userDetail);
+    // printRaw($userDetail);
     $old = $userDetail;
 }
 
@@ -63,11 +63,11 @@ if(isPost()) {
         if(!isPhone(($filterAll["phone"])))
             $errors["phone"]["isPhone"] = "Sđt không hợp lệ";
     
-    if(empty($filterAll["password"]))
-        $errors['password']['required'] = "Mật khẩu bắt buộc phải nhập";
-    else
-        if(strlen(($filterAll["password"])) < 8)
-            $errors["password"]["min"] = "Mật khẩu phải có ít nhất 8 ký tự";
+    // if(empty($filterAll["password"]))
+    //     $errors['password']['required'] = "Mật khẩu bắt buộc phải nhập";
+    // else
+    //     if(strlen(($filterAll["password"])) < 8)
+    //         $errors["password"]["min"] = "Mật khẩu phải có ít nhất 8 ký tự";
     
 
     if(empty($errors)){
@@ -81,8 +81,16 @@ if(isPost()) {
             "status"=>  $filterAll['status'],
             "create_at"=> date('Y-m-d H:i:s'),
         ];
-        if(!empty($filterAll['password']))
+        if(!empty($filterAll['password']))  {
             $dataUpdate['password'] = password_hash($filterAll['password'], PASSWORD_DEFAULT);
+            if(empty($filterAll["confirm_password"]))
+                $errors['confirm_password']['required'] = "Phải nhập lại mật khẩu";
+            else
+                if($filterAll["confirm_password"] != $filterAll["password"])
+                    $errors["confirm_password"]["match"] = "Mật khẩu bạn nhập lại không đúng";
+        }
+
+
         $condition = "id = $userId";
         $UpdateStatus = update('users',$dataUpdate, $condition);
         // var_dump($UpdateStatus);
@@ -209,13 +217,20 @@ layouts('header-login');
                     <div class="form-group mg-form">
                         <label for="">Trạng thái</label>
                         <select name="status" id="" class="form-control">
-                            <option  value="0" style="color: #DE6F20; font-weight: bold">Chưa kích hoạt</option>
-                            <option  value="1" style="color: #476E55; font-weight: bold">Đã kích hoạt</option>
+                            <option value="0" style="color: #DE6F20; font-weight: bold"
+                                <?php echo (isset($old['status']) && $old['status'] == 0) ? 'selected' : ''; ?>>
+                                Chưa kích hoạt
+                            </option>
+                            <option value="1" style="color: #476E55; font-weight: bold"
+                                <?php echo (isset($old['status']) && $old['status'] == 1) ? 'selected' : ''; ?>>
+                                Đã kích hoạt
+                            </option>
                         </select>
                     </div>
                 </div>
             </div>
             
+            <input type="hidden" name="id" value="<?php echo $userId ?> ">
 
             <button class="mg-btn-add btn btn-primary btn-block" type="submit">
                 Update người dùng

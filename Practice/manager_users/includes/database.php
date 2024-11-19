@@ -59,6 +59,9 @@ function insert($table, $data)
 // Hàm update   
 function update($table, $data, $condition='')
 {
+    if (empty($data)) {
+        throw new Exception("Update query requires data to update.");
+    }
     $update = '';
 
     foreach($data  as $key => $value){

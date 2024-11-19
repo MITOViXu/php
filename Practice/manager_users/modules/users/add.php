@@ -118,9 +118,7 @@ layouts('header-login');
                 <div class="col"> 
                     <div class="form-group mg-form">
                     <label for="">Họ tên: </label>
-                    <input type="text" name="fullname" class="form-control" placeholder="Họ tên"
-                        value="<?php (!empty($old['fullname']))  ? $old['fullname'] : ""; ?>"
-                    >
+                    <input type="text" name="fullname" class="form-control" placeholder="Họ tên">
                     <span class="error">
                         <?php
                             form_error('fullname','required', $errors);
@@ -134,9 +132,7 @@ layouts('header-login');
                     </div>
                     <div class="form-group mg-form">
                         <label for="">Email: </label>
-                        <input type="email" name="email" class="form-control" placeholder="Địa chỉ email"
-                            value="<?php echo (!empty($old['email'])) ? $old['email'] : ""; ?>"
-                        >
+                        <input type="email" name="email" class="form-control" placeholder="Địa chỉ email">
                         <span class="error">
                             <?php
                                 form_error('email','required', $errors);
@@ -150,9 +146,7 @@ layouts('header-login');
                     </div>
                     <div class="form-group mg-form">
                         <label for="">Số điện thoại: </label>
-                        <input type="text" name="phone" class="form-control" placeholder="Số điện thoại"
-                            value="<?php echo (!empty($old['phone'])) ? $old['phone'] : ""; ?>"
-                        >
+                        <input type="text" name="phone" class="form-control" placeholder="Số điện thoại">
                         <span class="error">
                             <?php
                                 form_error('phone','required', $errors);
